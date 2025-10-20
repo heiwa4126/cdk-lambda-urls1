@@ -12,3 +12,4 @@ var/
 tmp/
 tmp*.*
 *.tmp
+*.tgz

@@ -11,7 +11,7 @@
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
 		"cdk": "cdk",
-		"deploy": ". .env && cdk deploy -O var/outputs.json && node scripts/cdk_outputs_to_shell.mjs",
+		"deploy": ". .env && cdk deploy -O var/outputs.json && node script/cdk_outputs_to_shell.mjs",
 		"destroy": ". .env && cdk destroy",
 		"format": "biome format --write .",
 		"format:full": "biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
@@ -26,7 +26,7 @@
 		"vitest": "^3.2.4"
 	},
 	"dependencies": {
-		"@vendia/serverless-express": "^4.12.6",
+		"@codegenie/serverless-express": "^4.17.0",
 		"aws-cdk-lib": "2.220.0",
 		"constructs": "^10.4.2",
 		"express": "^5.1.0"
