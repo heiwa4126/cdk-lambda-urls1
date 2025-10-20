@@ -26,6 +26,16 @@ export class CdkLambdaUrls1Stack extends cdk.Stack {
 			environment: {
 				NODE_OPTIONS: "--enable-source-maps",
 			},
+			bundling: {
+				minify: true,
+				sourceMap: true, // runtimeスタックトレース縮小目的で無効化 (必要なら true に)
+				target: "node20",
+				format: lambdaNode.OutputFormat.CJS, // Lambda Node.js ランタイム互換 (ESM不要ならCJSで僅かに軽量)
+				mainFields: ["module", "main"], // 優先的に最適なエントリポイントを選択
+				metafile: true, // サイズ解析用メタファイル出力
+				externalModules: ["aws-sdk"], // v2 SDKはランタイム同梱。必要ならコメント解除
+				// define: { "process.env.NODE_ENV": '"production"' }, // 条件分岐除去に有効
+			},
 		});
 
 		const fnUrl = fn.addFunctionUrl({
