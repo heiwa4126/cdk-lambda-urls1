@@ -1,5 +1,6 @@
 import * as cdk from "aws-cdk-lib";
 import { Match, Template } from "aws-cdk-lib/assertions";
+import { beforeAll, describe, test } from "vitest";
 import { CdkLambdaUrls1Stack } from "../lib/cdk-lambda-urls1-stack";
 
 describe("CdkLambdaUrls1Stack", () => {
