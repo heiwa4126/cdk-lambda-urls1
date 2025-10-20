@@ -9,10 +9,14 @@
 		"watch": "tsc -w",
 		"test": "jest",
 		"cdk": "cdk",
+		"deploy": ". .env && cdk deploy -O var/outputs.json && node scripts/cdk_outputs_to_shell.mjs",
+		"destroy": ". .env && cdk destroy",
 		"format": "biome format --write .",
-		"format:full": "npm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\""
+		"format:full": "biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
+		"hello": ". var/outputs.sh && curl \"${CDK_CDKLAMBDAURLS1STACK_LAMBDA1FUNCTIONURL}hello\""
 	},
 	"devDependencies": {
+		"@types/express": "^5.0.3",
 		"@types/jest": "^30.0.0",
 		"@types/node": "24.8.1",
 		"aws-cdk": "2.1030.0",
@@ -22,7 +26,9 @@
 		"typescript": "~5.9.3"
 	},
 	"dependencies": {
+		"@vendia/serverless-express": "^4.12.6",
 		"aws-cdk-lib": "2.220.0",
-		"constructs": "^10.4.2"
+		"constructs": "^10.4.2",
+		"express": "^5.1.0"
 	}
 }
