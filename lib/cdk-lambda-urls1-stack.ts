@@ -23,9 +23,6 @@ export class CdkLambdaUrls1Stack extends cdk.Stack {
 			entry: "lambda/lambda1/index.ts",
 			handler: "handler",
 			logGroup: fnLogGroup,
-			environment: {
-				NODE_OPTIONS: "--enable-source-maps",
-			},
 			bundling: {
 				minify: true,
 				sourceMap: true, // runtimeスタックトレース縮小目的で無効化 (必要なら true に)

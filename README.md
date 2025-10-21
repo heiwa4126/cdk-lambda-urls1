@@ -13,6 +13,14 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - `npx cdk diff` compare deployed stack with current state
 - `npx cdk synth` emits the synthesized CloudFormation template
 
+## TODO
+
+CDK の outputs.json を shell にするのを、いまスクリプトを置いてるのを、別パッケージにして再利用できるようにする。
+
+いま
+express + @codegenie/serverless-express
+で出来てる lambda/lambda1 を Hono に置き換える。
+
 ## Lambda Function URL (/hello)
 
 このスタックは Express ベースの Lambda をデプロイし、認証なしの Function URL を公開しています。
