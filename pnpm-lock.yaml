@@ -30,6 +30,9 @@ importers:
       aws-cdk:
         specifier: 2.1030.0
         version: 2.1030.0
+      cdkoutputs2sh:
+        specifier: ^0.0.1
+        version: 0.0.1
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.8.1)(typescript@5.9.3)
@@ -487,6 +490,10 @@ packages:
   call-bound@1.0.4:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
+
+  cdkoutputs2sh@0.0.1:
+    resolution: {integrity: sha512-um/pnEqb3BRf68+jM87W0mjMGs/XBoznbft+fhLdU9qzJ9a8SGNnLkkCLnITjDKfIPrYlL79SBgvqvvqCpzkAw==}
+    hasBin: true
 
   chai@5.3.3:
     resolution: {integrity: sha512-4zNhdJD/iOjSH0A05ea+Ke6MU5mmpQcbQsSOkgdaUMJ9zTlDTD/GYlwohmIE2u0gaxHYiVHEn1Fw9mZ/ktJWgw==}
@@ -1301,6 +1308,8 @@ snapshots:
     dependencies:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
+
+  cdkoutputs2sh@0.0.1: {}
 
   chai@5.3.3:
     dependencies:

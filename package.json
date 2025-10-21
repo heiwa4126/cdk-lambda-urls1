@@ -11,16 +11,19 @@
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
 		"cdk": "cdk",
-		"deploy": ". .env && cdk deploy -O var/outputs.json && node script/cdk_outputs_to_shell.mjs",
+		"deploy": ". .env && cdk deploy -O var/outputs.json && cdkoutputs2sh -v",
 		"destroy": ". .env && cdk destroy",
 		"format": "biome format --write .",
 		"format:full": "biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
-		"hello": ". var/outputs.sh && curl \"${CDK_CDKLAMBDAURLS1STACK_LAMBDA1FUNCTIONURL}hello\""
+		"hello": ". var/outputs.sh && curl \"${CDK_CDKLAMBDAURLS1STACK_LAMBDA1FUNCTIONURL}hello\"",
+		"security": "trivy fs --skip-dirs node_modules,cdk.out . && trivy config --skip-dirs node_modules,cdk.out .",
+		"audit": "pnpm audit && trivy fs --scanners vuln package.json"
 	},
 	"devDependencies": {
 		"@types/express": "^5.0.3",
 		"@types/node": "24.8.1",
 		"aws-cdk": "2.1030.0",
+		"cdkoutputs2sh": "^0.0.1",
 		"ts-node": "^10.9.2",
 		"typescript": "~5.9.3",
 		"vitest": "^3.2.4"
