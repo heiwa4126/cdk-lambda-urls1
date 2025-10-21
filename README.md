@@ -1,56 +1,27 @@
-# Welcome to your CDK TypeScript project
+# cdk-lambda-urls1
 
-This is a blank project for CDK development with TypeScript.
+AWS CDK (TypeScript) で
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+- TypeScript で書いた Lambda(lambda/lambda1)を Lambda function URLs
+- 上の Lambda 用の専用 CloudWatch Logs グループ
 
-## Useful commands
+をデプロイする実験。
 
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
-- `npx cdk deploy` deploy this stack to your default AWS account/region
-- `npx cdk diff` compare deployed stack with current state
-- `npx cdk synth` emits the synthesized CloudFormation template
+lambda は今 express + @codegenie/serverless-express で書いてある。
+Hono に変える予定。
 
-## TODO
+## 実行
 
-CDK の outputs.json を shell にするのを、いまスクリプトを置いてるのを、別パッケージにして再利用できるようにする。
+プロジェクトディレクトリで
 
-いま
-express + @codegenie/serverless-express
-で出来てる lambda/lambda1 を Hono に置き換える。
-
-## Lambda Function URL (/hello)
-
-このスタックは Express ベースの Lambda をデプロイし、認証なしの Function URL を公開しています。
-
-スタック出力例:
-
+```sh
+pnpm i
+cp .env_template .env # の後、.envを編集
+cdk synth # テスト
+pnpm run diff # .env 読んで `cdk diff`
+pnpm run deploy  # .env 読んで `cdk deploy` + outputs変換
+#
+pnpm run hello # API呼び出し
+#
+pnpm run destroy # .env 読んで `cdk destroy`
 ```
-Lambda1FunctionUrl = https://xxxxxxxxxxxx.lambda-url.<region>.on.aws/
-```
-
-エンドポイント `/hello` へアクセスするには次のように実行します:
-
-```bash
-curl "$(npx cdk deploy --outputs-file outputs.json >/dev/null 2>&1; jq -r '.CdkLambdaUrls1Stack.Lambda1FunctionUrl' outputs.json)/hello"
-```
-
-単純に URL を控えて直接:
-
-```bash
-curl https://xxxxxxxxxxxx.lambda-url.<region>.on.aws/hello
-```
-
-レスポンス例:
-
-```json
-{ "message": "Hello from lambda1!" }
-```
-
-### 更新 / 開発ヒント
-
-- Lambda のソース: `lambda/lambda1/app.ts`, `lambda/lambda1/index.ts`
-- ログ保持期間: 7 日 (CloudWatch Logs LogRetention カスタムリソース)
-- 依存ライブラリは `lambda/lambda1/package.json` に分離
