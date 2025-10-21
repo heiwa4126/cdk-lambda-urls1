@@ -1,9 +1,9 @@
-import express, { type Express, type Request, type Response } from "express";
+import { Hono } from "hono";
 
-const app: Express = express();
+const app = new Hono();
 
-app.get("/hello", (req: Request, res: Response) => {
-	res.json({ message: "Hello from lambda1!" });
+app.get("/hello", (c) => {
+	return c.json({ message: "Hello from lambda1!" });
 });
 
 export default app;

@@ -21,7 +21,6 @@
 		"audit": "pnpm audit && trivy fs --scanners vuln package.json"
 	},
 	"devDependencies": {
-		"@types/express": "^5.0.3",
 		"@types/node": "24.9.1",
 		"aws-cdk": "2.1030.0",
 		"cdkoutputs2sh": "^0.0.1",
@@ -30,9 +29,8 @@
 		"vitest": "^3.2.4"
 	},
 	"dependencies": {
-		"@codegenie/serverless-express": "^4.17.0",
 		"aws-cdk-lib": "2.220.0",
 		"constructs": "^10.4.2",
-		"express": "^5.1.0"
+		"hono": "^4.6.14"
 	}
 }

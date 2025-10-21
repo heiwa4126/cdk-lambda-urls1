@@ -1,5 +1,5 @@
-// Migrated from @vendia/serverless-express to @codegenie/serverless-express
-import serverlessExpress from "@codegenie/serverless-express";
+// Hono AWS Lambda エントリポイント
+import { handle } from "hono/aws-lambda";
 import app from "./app";
 
-export const handler = serverlessExpress({ app });
+export const handler = handle(app);
