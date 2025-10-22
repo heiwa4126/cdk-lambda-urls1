@@ -15,8 +15,8 @@ importers:
         specifier: ^10.4.2
         version: 10.4.2
       hono:
-        specifier: ^4.6.14
-        version: 4.10.1
+        specifier: ^4.10.2
+        version: 4.10.2
     devDependencies:
       '@types/node':
         specifier: 24.9.1
@@ -25,8 +25,8 @@ importers:
         specifier: 2.1030.0
         version: 2.1030.0
       cdkoutputs2sh:
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.2
+        version: 0.0.2
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.9.1)(typescript@5.9.3)
@@ -428,8 +428,8 @@ packages:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
 
-  cdkoutputs2sh@0.0.1:
-    resolution: {integrity: sha512-um/pnEqb3BRf68+jM87W0mjMGs/XBoznbft+fhLdU9qzJ9a8SGNnLkkCLnITjDKfIPrYlL79SBgvqvvqCpzkAw==}
+  cdkoutputs2sh@0.0.2:
+    resolution: {integrity: sha512-5QQgbwvbdg7KGZCY895TKOKsdfr5gOPaz4vxvHtMEw/2bWFx+vKtFkdmHK5fgxgJcYARP7JkQQBxVKETR7hsdw==}
     hasBin: true
 
   chai@5.3.3:
@@ -497,8 +497,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  hono@4.10.1:
-    resolution: {integrity: sha512-rpGNOfacO4WEPClfkEt1yfl8cbu10uB1lNpiI33AKoiAHwOS8lV748JiLx4b5ozO/u4qLjIvfpFsPXdY5Qjkmg==}
+  hono@4.10.2:
+    resolution: {integrity: sha512-p6fyzl+mQo6uhESLxbF5WlBOAJMDh36PljwlKtP5V1v09NxlqGru3ShK+4wKhSuhuYf8qxMmrivHOa/M7q0sMg==}
     engines: {node: '>=16.9.0'}
 
   js-tokens@9.0.1:
@@ -940,7 +940,7 @@ snapshots:
 
   cac@6.7.14: {}
 
-  cdkoutputs2sh@0.0.1: {}
+  cdkoutputs2sh@0.0.2: {}
 
   chai@5.3.3:
     dependencies:
@@ -1011,7 +1011,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  hono@4.10.1: {}
+  hono@4.10.2: {}
 
   js-tokens@9.0.1: {}
 
