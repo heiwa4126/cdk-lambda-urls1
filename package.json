@@ -22,15 +22,15 @@
 	},
 	"devDependencies": {
 		"@types/node": "24.9.1",
-		"aws-cdk": "2.1030.0",
+		"aws-cdk": "2.1031.0",
 		"cdkoutputs2sh": "^0.0.2",
 		"ts-node": "^10.9.2",
 		"typescript": "~5.9.3",
-		"vitest": "^3.2.4"
+		"vitest": "^4.0.4"
 	},
 	"dependencies": {
-		"aws-cdk-lib": "2.220.0",
+		"aws-cdk-lib": "2.221.0",
 		"constructs": "^10.4.2",
-		"hono": "^4.10.2"
+		"hono": "^4.10.3"
 	}
 }
