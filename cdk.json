@@ -1,5 +1,6 @@
 {
-	"app": "npx ts-node --prefer-ts-exts bin/cdk-lambda-urls1.ts",
+	"app_": "npx ts-node --prefer-ts-exts bin/cdk-lambda-urls1.ts",
+	"app": "tsx bin/cdk-lambda-urls1.ts",
 	"watch": {
 		"include": ["**"],
 		"exclude": [

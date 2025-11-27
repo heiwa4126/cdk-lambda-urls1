@@ -27,6 +27,15 @@ pnpm run hello        # API呼び出し
 pnpm run destroy      # .env 読んで `cdk destroy`
 ```
 
+### テレメトリ
+
+[NOTICE: CDK CLI will begin to collect anonymous telemetry data on December 12th, 2025 · Issue #34892 · aws/aws-cdk](https://github.com/aws/aws-cdk/issues/34892)
+用に、1 個 run-script を追記しました。tmp.log に出ます
+
+```sh
+pnpm run synth34892
+```
+
 ## メモ
 
 `pnpm run deploy` (cdk deploy) で

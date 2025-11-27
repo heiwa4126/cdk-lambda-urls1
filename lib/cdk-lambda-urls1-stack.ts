@@ -19,13 +19,14 @@ export class CdkLambdaUrls1Stack extends cdk.Stack {
 		});
 
 		const fn = new lambdaNode.NodejsFunction(this, "Lambda1Function", {
-			runtime: lambda.Runtime.NODEJS_20_X,
+			runtime: lambda.Runtime.NODEJS_22_X,
 			entry: "lambda/lambda1/index.ts",
 			handler: "handler",
 			logGroup: fnLogGroup,
 			bundling: {
-				minify: true,
-				sourceMap: false, // runtimeスタックトレース縮小目的で無効化 (必要なら true に)
+				forceDockerBundling: false,
+				minify: false,
+				sourceMap: true, // runtimeスタックトレース縮小目的で無効化 (必要なら true に)
 				target: "node20",
 				format: lambdaNode.OutputFormat.CJS, // Lambda Node.js ランタイム互換 (ESM不要ならCJSで僅かに軽量)
 				mainFields: ["module", "main"], // 優先的に最適なエントリポイントを選択
