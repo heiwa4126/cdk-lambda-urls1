@@ -25,9 +25,9 @@ export class CdkLambdaUrls1Stack extends cdk.Stack {
 			logGroup: fnLogGroup,
 			bundling: {
 				forceDockerBundling: false,
-				minify: false,
-				sourceMap: true, // runtimeスタックトレース縮小目的で無効化 (必要なら true に)
-				target: "node20",
+				minify: true,
+				sourceMap: false, // runtimeスタックトレース縮小目的で無効化 (必要なら true に)
+				target: "node22",
 				format: lambdaNode.OutputFormat.CJS, // Lambda Node.js ランタイム互換 (ESM不要ならCJSで僅かに軽量)
 				mainFields: ["module", "main"], // 優先的に最適なエントリポイントを選択
 				metafile: false, // サイズ解析用メタファイル出力

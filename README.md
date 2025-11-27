@@ -36,6 +36,8 @@ pnpm run destroy      # .env 読んで `cdk destroy`
 pnpm run synth34892
 ```
 
+参考: [CLI Notices · aws/aws-cdk Wiki · GitHub](https://github.com/aws/aws-cdk/wiki/CLI-Notices)
+
 ## メモ
 
 `pnpm run deploy` (cdk deploy) で
