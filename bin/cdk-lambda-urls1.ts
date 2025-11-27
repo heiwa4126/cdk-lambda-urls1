@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from "aws-cdk-lib";
+import { AwsSolutionsChecks } from "cdk-nag";
 import { CdkLambdaUrls1Stack } from "../lib/cdk-lambda-urls1-stack";
 
 const app = new cdk.App();
@@ -15,3 +16,6 @@ new CdkLambdaUrls1Stack(app, "CdkLambdaUrls1Stack", {
 	// env: { account: '123456789012', region: 'us-east-1' },
 	/* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
+
+// Apply CDK Nag AWS Solutions checks
+cdk.Aspects.of(app).add(new AwsSolutionsChecks());

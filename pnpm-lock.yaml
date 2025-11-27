@@ -24,6 +24,9 @@ importers:
       aws-cdk:
         specifier: 2.1033.0
         version: 2.1033.0
+      cdk-nag:
+        specifier: ^2.37.55
+        version: 2.37.55(aws-cdk-lib@2.230.0(constructs@10.4.3))(constructs@10.4.3)
       cdkoutputs2sh:
         specifier: ^0.0.2
         version: 0.0.2
@@ -429,6 +432,12 @@ packages:
     resolution: {integrity: sha512-Pit2k7cVAwxoYI7RMVsOyltuy7/HGENLupJ4KAm/d8mGzOfX+SLOo9YQsx5CKY9J6ErCZ1ViLerklTfjytvQww==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
+
+  cdk-nag@2.37.55:
+    resolution: {integrity: sha512-xcAkygwbph3pp7N0UEzJBmXUH/MIsluV7DYJSeZ/V3yCr0Y0QaRGO298WyD6mi4K+Rmnpl+EJoWUxcOblOqLKA==}
+    peerDependencies:
+      aws-cdk-lib: ^2.176.0
+      constructs: ^10.0.5
 
   cdkoutputs2sh@0.0.2:
     resolution: {integrity: sha512-5QQgbwvbdg7KGZCY895TKOKsdfr5gOPaz4vxvHtMEw/2bWFx+vKtFkdmHK5fgxgJcYARP7JkQQBxVKETR7hsdw==}
@@ -912,6 +921,11 @@ snapshots:
   aws-cdk@2.1033.0:
     optionalDependencies:
       fsevents: 2.3.2
+
+  cdk-nag@2.37.55(aws-cdk-lib@2.230.0(constructs@10.4.3))(constructs@10.4.3):
+    dependencies:
+      aws-cdk-lib: 2.230.0(constructs@10.4.3)
+      constructs: 10.4.3
 
   cdkoutputs2sh@0.0.2: {}
 

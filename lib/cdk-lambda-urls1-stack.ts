@@ -1,9 +1,11 @@
 import * as cdk from "aws-cdk-lib";
 import {
+	aws_iam as iam,
 	aws_lambda as lambda,
 	aws_lambda_nodejs as lambdaNode,
 	aws_logs as logs,
 } from "aws-cdk-lib";
+import { NagSuppressions } from "cdk-nag";
 import type { Construct } from "constructs";
 
 export class CdkLambdaUrls1Stack extends cdk.Stack {
@@ -18,11 +20,27 @@ export class CdkLambdaUrls1Stack extends cdk.Stack {
 			removalPolicy: cdk.RemovalPolicy.DESTROY, // dev convenience; change to RETAIN for production
 		});
 
+		// Custom IAM role with least privilege (no AWS managed policies)
+		const fnRole = new iam.Role(this, "Lambda1FunctionRole", {
+			assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
+			description: "Custom execution role for Lambda1Function with least privilege",
+		});
+
+		// Add minimal CloudWatch Logs permissions
+		fnRole.addToPolicy(
+			new iam.PolicyStatement({
+				effect: iam.Effect.ALLOW,
+				actions: ["logs:CreateLogStream", "logs:PutLogEvents"],
+				resources: [fnLogGroup.logGroupArn],
+			}),
+		);
+
 		const fn = new lambdaNode.NodejsFunction(this, "Lambda1Function", {
 			runtime: lambda.Runtime.NODEJS_22_X,
 			entry: "lambda/lambda1/index.ts",
 			handler: "handler",
 			logGroup: fnLogGroup,
+			role: fnRole, // Use custom role instead of auto-generated one
 			bundling: {
 				forceDockerBundling: false,
 				minify: true,
@@ -35,6 +53,15 @@ export class CdkLambdaUrls1Stack extends cdk.Stack {
 				// define: { "process.env.NODE_ENV": '"production"' }, // 条件分岐除去に有効
 			},
 		});
+
+		// Suppress AwsSolutions-L1: Node.js 22.x is the latest runtime
+		NagSuppressions.addResourceSuppressions(fn, [
+			{
+				id: "AwsSolutions-L1",
+				reason:
+					"Node.js 22.x is the latest available runtime version. CDK Nag may not recognize it yet.",
+			},
+		]);
 
 		const fnUrl = fn.addFunctionUrl({
 			authType: lambda.FunctionUrlAuthType.NONE,
