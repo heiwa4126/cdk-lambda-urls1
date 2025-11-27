@@ -21,16 +21,16 @@
 		"audit": "pnpm audit && trivy fs --scanners vuln package.json"
 	},
 	"devDependencies": {
-		"@types/node": "24.9.1",
-		"aws-cdk": "2.1031.0",
+		"@types/node": "24.10.1",
+		"aws-cdk": "2.1033.0",
 		"cdkoutputs2sh": "^0.0.2",
 		"ts-node": "^10.9.2",
 		"typescript": "~5.9.3",
-		"vitest": "^4.0.4"
+		"vitest": "^4.0.14"
 	},
 	"dependencies": {
-		"aws-cdk-lib": "2.221.0",
-		"constructs": "^10.4.2",
-		"hono": "^4.10.3"
+		"aws-cdk-lib": "2.230.0",
+		"constructs": "^10.4.3",
+		"hono": "^4.10.7"
 	}
 }
