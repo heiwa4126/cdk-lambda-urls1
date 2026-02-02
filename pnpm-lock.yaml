@@ -22,8 +22,8 @@ importers:
         specifier: 24.9.1
         version: 24.9.1
       aws-cdk:
-        specifier: 2.1031.1
-        version: 2.1031.1
+        specifier: 2.1104.0
+        version: 2.1104.0
       cdkoutputs2sh:
         specifier: ^0.0.2
         version: 0.0.2
@@ -437,8 +437,8 @@ packages:
       - yaml
       - mime-types
 
-  aws-cdk@2.1031.1:
-    resolution: {integrity: sha512-y/ovZDtOKvgJFtwE7NDFKRgJB3stgUUrAu6b31icuFO8+vnZ+4BIt0McQfbVR8ky5QOj2TW1G1sk55k8Yv+BnQ==}
+  aws-cdk@2.1104.0:
+    resolution: {integrity: sha512-TGIK2Mpfqi0BA6Np9aJz0d5HAvTxWd17FrwtXlJuwqdQbR9R/IRqsabF6xRAuhFTz7/YrrHHU9H4VK/Xfnh7Vg==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
 
@@ -483,11 +483,6 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
-
-  fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -920,9 +915,7 @@ snapshots:
       '@aws-cdk/cloud-assembly-schema': 48.17.0
       constructs: 10.4.2
 
-  aws-cdk@2.1031.1:
-    optionalDependencies:
-      fsevents: 2.3.2
+  aws-cdk@2.1104.0: {}
 
   cdkoutputs2sh@0.0.2: {}
 
@@ -974,9 +967,6 @@ snapshots:
   fdir@6.5.0(picomatch@4.0.3):
     optionalDependencies:
       picomatch: 4.0.3
-
-  fsevents@2.3.2:
-    optional: true
 
   fsevents@2.3.3:
     optional: true
