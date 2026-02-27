@@ -27,13 +27,13 @@
 		"cdk-nag": "^2.37.55",
 		"cdkoutputs2sh": "^0.0.2",
 		"ts-node": "^10.9.2",
-		"tsx": "^4.20.6",
+		"tsx": "^4.21.0",
 		"typescript": "~5.9.3",
-		"vitest": "^4.0.14"
+		"vitest": "^4.0.18"
 	},
 	"dependencies": {
 		"aws-cdk-lib": "2.230.0",
-		"constructs": "^10.4.3",
-		"hono": "^4.10.7"
+		"constructs": "^10.5.1",
+		"hono": "^4.12.3"
 	}
 }
