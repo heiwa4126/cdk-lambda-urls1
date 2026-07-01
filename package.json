@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@types/node": "25.9.1",
 		"aws-cdk": "2.1125.0",
-		"cdk-nag": "^2.38.2",
+		"cdk-nag": "^3.0.1",
 		"cdkoutputs2sh": "^0.0.2",
 		"ts-node": "^10.9.2",
 		"tsx": "^4.22.4",
