@@ -14,7 +14,7 @@ describe("CdkLambdaUrls1Stack", () => {
 	test("LogGroup retention is 7 days", () => {
 		template.hasResourceProperties("AWS::Logs::LogGroup", {
 			RetentionInDays: 7,
-			LogGroupName: "/aws/lambda/Lambda1Function",
+			LogGroupName: "/aws/lambda/Lambda1Function"
 		});
 	});
 
@@ -22,8 +22,8 @@ describe("CdkLambdaUrls1Stack", () => {
 		template.hasResourceProperties("AWS::Lambda::Url", {
 			Cors: {
 				AllowMethods: ["GET", "HEAD"],
-				AllowOrigins: ["*"],
-			},
+				AllowOrigins: ["*"]
+			}
 		});
 	});
 
@@ -31,7 +31,7 @@ describe("CdkLambdaUrls1Stack", () => {
 		// CloudFormation template output keys can be inspected directly
 		template.hasOutput("Lambda1FunctionUrl", {
 			Description: "Invoke URL for Lambda1 /hello endpoint",
-			Export: Match.absent(), // no export expected
+			Export: Match.absent() // no export expected
 		});
 	});
 });

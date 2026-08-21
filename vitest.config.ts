@@ -6,7 +6,7 @@ export default defineConfig({
 		environment: "node",
 		clearMocks: true,
 		coverage: {
-			enabled: false,
-		},
-	},
+			enabled: false
+		}
+	}
 });
