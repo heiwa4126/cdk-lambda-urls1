@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "26.6.2",
-		"aws-cdk": "2.1138.0",
+		"aws-cdk": "2.1143.0",
 		"cdk-nag": "^3.0.2",
 		"cdkoutputs2sh": "^0.0.2",
 		"ts-node": "^10.9.2",
