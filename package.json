@@ -28,7 +28,7 @@
 		"hono": "^4.13.11"
 	},
 	"devDependencies": {
-		"@types/node": "26.6.2",
+		"@types/node": "26.6.5",
 		"aws-cdk": "2.1143.0",
 		"cdk-nag": "^3.0.2",
 		"cdkoutputs2sh": "^0.0.2",
